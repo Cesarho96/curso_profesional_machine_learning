@@ -4,7 +4,7 @@ from core.models import Models
 
 def main():
     model = Models()
-    df = Utils.load_from_csv("./data/heart.csv")
+    df = Utils.load_from_csv("../inputs/heart.csv")
     data, target = Utils.feature_target(dataset=df, drop_cols=["target"], y="target")
     best_model, score = model.get_best_model(x=data, y=target)
     print(best_model, score)
